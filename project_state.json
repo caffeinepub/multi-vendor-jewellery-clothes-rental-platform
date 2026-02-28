@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Multi-Vendor Jewellery & Clothes Rental Platform with full workflow automation. Model: Vendor → Center → Trial → Sanitization → Rental → Return → QC → Payout. 4 roles: Customer, Vendor, Center, Admin. Tech stack: Next.js/React + Tailwind, Node.js/NestJS, MySQL, Redis, BullMQ, AWS S3/Cloudinary, Razorpay/PhonePe/UPI. Home page redesigned per detailed PRD: premium luxury theme with Royal Gold (#C6A75E), Deep Black (#111111), Ivory White (#F9F6F1), Burgundy accent, Playfair Display headings, Poppins/Inter body, 10-section layout (Hero → Trust Strip → Categories → How It Works → Trending Products → Nearest Centers → Vendor CTA → Testimonials → Footer), conversion optimization elements (sticky CTA, WhatsApp button, popups), SEO & mobile-first.",
+  "architectural_notes": [
+    "Frontend: Next.js + React, Tailwind CSS, Redux/Zustand, role-based routing",
+    "Backend: Node.js + NestJS, REST API, JWT auth + role middleware",
+    "Database: MySQL (normalized), Redis (caching), BullMQ (payout & notification queues)",
+    "Storage: AWS S3 / Cloudinary for product images, videos, sanitization proof",
+    "Payment: Razorpay / PhonePe / UPI with webhook verification; commission formula: Rental - Admin Commission - Center Share = Vendor Net",
+    "Order status flow: Trial Booked → Trial Completed → Payment Done → Sanitizing → Ready for Handover → Rented → Returned → Closed",
+    "Home page design system: Royal Gold (#C6A75E), Deep Black (#111111), Ivory White (#F9F6F1), Burgundy (#7A1E2C); Playfair Display headings, Poppins/Inter body; 12px rounded cards, gold gradient buttons, fade-in animations"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Split two-panel luxury hero banner: left side deep black background with gold serif text overlay, right side Indian bridal model wearing kundan jewellery set and red lehenga against a soft gold gradient backdrop (hero-banner.dim_1440x800.png)\n- Bridal jewellery category card: close-up of ornate kundan gold necklace set with earrings on ivory fabric background, warm studio lighting (category-bridal-jewellery.dim_600x750.png)\n- Wedding lehenga category card: full-length Indian bride in crimson embroidered lehenga with dupatta, elegant indoor bridal setting (category-wedding-lehenga.dim_600x750.png)\n- Party wear jewellery category card: elegant gold statement necklace with green emerald stones arranged on dark velvet background (category-party-jewellery.dim_600x750.png)\n- Designer gowns category card: floor-length champagne gold evening gown on a mannequin against a neutral studio backdrop (category-designer-gowns.dim_600x750.png)\n- Sanitization guarantee badge: circular emblem with gold border, shield icon in center, text Sanitized and Verified on ivory background with subtle gold ornamental details (sanitization-badge.dim_400x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-role-based-authentication-system-with-four-roles-customer-vendor-center-and-admin-each-role-must-have-secure-login-registration-session-management-using-stable-tokens-stored-in-the-backend-actor-and-a-permission-control-matrix-that-gates-access-to-role-specific-routes-and-actions",
+      "title": "Implement a role-based authentication system with four roles: Customer, Vendor, Center, and Admin. Each role must have secure login/registration, session management using stable tokens stored in the backend actor, and a permission control matrix that gates access to role-specific routes and actions.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-public-home-page-with-a-hero-banner-reading-try-before-you-rent-category-sections-for-jewellery-bridal-and-dresses-a-nearest-centers-section-a-featured-vendors-section-a-how-it-works-step-by-step-section-a-sanitization-guarantee-badge-and-a-prominent-book-trial-cta-button",
+      "title": "Build a public home page with: a hero banner reading 'Try Before You Rent', category sections for Jewellery, Bridal, and Dresses, a Nearest Centers section, a Featured Vendors section, a How It Works step-by-step section, a Sanitization Guarantee badge, and a prominent 'Book Trial' CTA button.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-customer-module-with-registration-login-with-kyc-document-upload-product-browsing-with-filter-by-center-location-and-category-trial-slot-booking-rental-booking-and-online-payment-simulated-payment-flow-wallet-and-security-deposit-management-order-status-tracking-through-the-full-status-flow-trial-booked-trial-completed-payment-done-sanitizing-ready-for-handover-rented-returned-closed-rental-history-view-and-dispute-raise-form",
+      "title": "Implement the Customer module with: registration/login with KYC document upload, product browsing with filter by center location and category, trial slot booking, rental booking and online payment (simulated payment flow), wallet and security deposit management, order status tracking through the full status flow (Trial Booked → Trial Completed → Payment Done → Sanitizing → Ready for Handover → Rented → Returned → Closed), rental history view, and dispute raise form.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-vendor-module-with-vendor-registration-including-gst-and-bank-kyc-fields-product-upload-with-multiple-images-rental-price-and-deposit-amount-ability-to-mark-a-product-as-sent-to-a-specific-center-real-time-inventory-status-tracking-at-vendor-at-center-on-trial-rented-under-sanitization-rental-orders-list-earnings-summary-showing-gross-and-net-after-commission-commission-deduction-breakdown-and-payout-history",
+      "title": "Implement the Vendor module with: vendor registration including GST and bank KYC fields, product upload with multiple images, rental price, and deposit amount, ability to mark a product as sent to a specific center, real-time inventory status tracking (At Vendor / At Center / On Trial / Rented / Under Sanitization), rental orders list, earnings summary showing gross and net after commission, commission deduction breakdown, and payout history.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-center-module-with-receiving-and-acknowledging-vendor-inventory-qc-verification-and-approval-for-trial-trial-slot-management-pos-walk-in-customer-booking-marking-trial-as-completed-sanitization-workflow-with-a-checklist-cleaning-type-chemical-used-staff-name-date-time-before-after-image-upload-status-approved-reclean-required-auto-generation-of-sanitized-tag-with-unique-id-and-date-stamp-handover-confirmation-return-qc-inspection-and-damage-charge-entry",
+      "title": "Implement the Center module with: receiving and acknowledging vendor inventory, QC verification and approval for trial, trial slot management, POS walk-in customer booking, marking trial as completed, sanitization workflow with a checklist (cleaning type, chemical used, staff name, date/time, before/after image upload, status: Approved/Reclean Required), auto-generation of sanitized tag with unique ID and date stamp, handover confirmation, return QC inspection, and damage charge entry.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-admin-module-with-vendor-and-center-approval-workflows-product-approval-queue-configurable-admin-commission-percentage-and-center-revenue-share-percentage-platform-revenue-overview-order-override-capability-force-refund-action-payout-release-control-dispute-management-queue-gst-report-generation-and-an-analytics-dashboard-showing-total-revenue-active-rentals-conversion-rate-trial-to-rental-percentage-and-center-performance-scores",
+      "title": "Implement the Admin module with: vendor and center approval workflows, product approval queue, configurable admin commission percentage and center revenue share percentage, platform revenue overview, order override capability, force refund action, payout release control, dispute management queue, GST report generation, and an analytics dashboard showing total revenue, active rentals, conversion rate, trial-to-rental percentage, and center performance scores.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-role-based-dashboards-for-all-four-roles-each-dashboard-must-include-summary-overview-cards-charts-for-revenue-rentals-performance-trends-data-tables-for-orders-products-payouts-date-and-status-filters-on-tables-csv-export-for-table-data-and-an-in-app-notification-panel-showing-role-relevant-workflow-events",
+      "title": "Build role-based dashboards for all four roles. Each dashboard must include: summary overview cards, charts for revenue/rentals/performance trends, data tables for orders/products/payouts, date and status filters on tables, CSV export for table data, and an in-app notification panel showing role-relevant workflow events.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-luxury-boutique-visual-theme-across-the-entire-application-use-a-deep-jewel-toned-palette-e-g-rich-emerald-champagne-gold-and-ivory-elegant-serif-display-typography-for-headings-paired-with-a-clean-sans-serif-for-body-text-card-based-layouts-with-generous-whitespace-subtle-golden-accents-on-interactive-elements-and-a-refined-header-navigation-bar-enforce-this-theme-consistently-across-all-four-role-dashboards-and-the-public-home-page",
+      "title": "Apply a cohesive luxury-boutique visual theme across the entire application. Use a deep jewel-toned palette (e.g., rich emerald, champagne gold, and ivory), elegant serif display typography for headings paired with a clean sans-serif for body text, card-based layouts with generous whitespace, subtle golden accents on interactive elements, and a refined header/navigation bar. Enforce this theme consistently across all four role dashboards and the public home page.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-all-required-static-image-assets-a-hero-banner-for-the-home-page-category-cover-images-for-jewellery-bridal-and-dresses-a-sanitization-guarantee-badge-graphic-and-a-platform-logo-mark-render-these-as-static-assets-from-frontend-public-assets-generated",
+      "title": "Generate all required static image assets: a hero banner for the home page, category cover images for Jewellery, Bridal, and Dresses, a Sanitization Guarantee badge graphic, and a platform logo mark. Render these as static assets from frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-the-public-home-page-frontend-src-pages-home-tsx-with-a-full-10-section-layout-in-this-order-hero-trust-strip-featured-categories-how-it-works-trending-products-nearest-centers-vendor-cta-testimonials-footer-use-the-design-system-royal-gold-c6a75e-primary-deep-black-111111-secondary-ivory-white-f9f6f1-background-burgundy-7a1e2c-accent-playfair-display-headings-poppins-inter-body-rounded-xl-12px-cards-soft-shadows-gold-gradient-buttons-smooth-scroll-animations-and-elegant-fade-in-transitions-on-scroll",
+      "title": "Rebuild the public home page (frontend/src/pages/Home.tsx) with a full 10-section layout in this order: Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer. Use the design system: Royal Gold (#C6A75E) primary, Deep Black (#111111) secondary, Ivory White (#F9F6F1) background, Burgundy (#7A1E2C) accent, Playfair Display headings, Poppins/Inter body, rounded-xl (12px) cards, soft shadows, gold gradient buttons, smooth scroll animations, and elegant fade-in transitions on scroll.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-header-and-navigation-bar-on-the-public-home-page-add-a-top-utility-bar-with-a-center-location-selector-labeled-choose-center-a-contact-support-link-a-become-a-vendor-button-and-login-register-controls-add-a-main-navigation-menu-with-links-jewellery-bridal-sets-party-wear-designer-dresses-how-it-works-centers-become-vendor-include-an-integrated-search-bar-with-inputs-for-product-name-center-filter-and-price-range-filter",
+      "title": "Redesign the Header and Navigation bar on the public home page. Add a top utility bar with: a center location selector labeled Choose Center, a contact support link, a Become a Vendor button, and Login/Register controls. Add a main navigation menu with links: Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor. Include an integrated search bar with inputs for product name, center filter, and price range filter.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-hero-section-as-a-two-column-full-width-section-left-column-headline-try-before-you-rent-luxury-jewellery-designer-wear-subheading-book-a-trial-at-your-nearest-center-fully-sanitized-zero-compromise-and-two-cta-buttons-primary-book-trial-and-secondary-explore-collection-right-column-a-premium-model-image-showing-jewellery-and-bridal-dress-on-a-subtle-gold-gradient-background-use-the-generated-hero-banner-image-asset-hero-banner-dim-1440x800-png",
+      "title": "Build the Hero Section as a two-column full-width section. Left column: headline 'Try Before You Rent - Luxury Jewellery & Designer Wear', subheading 'Book a trial at your nearest center. Fully sanitized. Zero compromise.', and two CTA buttons: primary 'Book Trial' and secondary 'Explore Collection'. Right column: a premium model image showing jewellery and bridal dress on a subtle gold gradient background. Use the generated hero banner image asset (hero-banner.dim_1440x800.png).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-trust-and-safety-strip-section-as-a-4-column-icon-row-immediately-below-the-hero-columns-1-sanitized-verified-2-secure-deposit-protection-3-physical-trial-available-4-safe-payments-each-column-shows-a-large-icon-and-a-label-use-an-ivory-or-light-gold-background-to-distinguish-the-strip-from-the-hero",
+      "title": "Build the Trust and Safety Strip section as a 4-column icon row immediately below the hero. Columns: (1) Sanitized & Verified, (2) Secure Deposit Protection, (3) Physical Trial Available, (4) Safe Payments. Each column shows a large icon and a label. Use an ivory or light gold background to distinguish the strip from the hero.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-featured-categories-section-as-a-4-column-premium-card-grid-categories-bridal-jewellery-wedding-lehenga-party-wear-jewellery-designer-gowns-each-card-shows-the-category-image-category-name-and-an-explore-now-button-on-hover-apply-a-slight-zoom-transform-and-a-golden-border-glow-use-the-generated-category-image-assets",
+      "title": "Build the Featured Categories section as a 4-column premium card grid. Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns. Each card shows the category image, category name, and an Explore Now button. On hover, apply a slight zoom transform and a golden border glow. Use the generated category image assets.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-how-it-works-section-as-a-4-step-horizontal-timeline-layout-with-step-icons-and-connector-lines-between-them-steps-1-vendor-sends-to-center-2-book-trial-at-center-3-select-pay-4-sanitized-delivered-end-the-section-with-a-prominent-book-your-trial-today-cta-button",
+      "title": "Redesign the How It Works section as a 4-step horizontal timeline layout with step icons and connector lines between them. Steps: (1) Vendor Sends to Center, (2) Book Trial at Center, (3) Select & Pay, (4) Sanitized & Delivered. End the section with a prominent 'Book Your Trial Today' CTA button.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-trending-products-section-showing-a-responsive-grid-of-3-to-4-product-cards-per-row-each-product-card-displays-product-image-rental-price-per-day-security-deposit-amount-available-center-name-a-book-trial-button-a-last-sanitized-date-label-and-a-most-booked-badge-tag-on-eligible-products-use-mock-demo-data-seeded-from-the-order-store",
+      "title": "Build a Trending Products section showing a responsive grid of 3 to 4 product cards per row. Each product card displays: product image, rental price per day, security deposit amount, available center name, a Book Trial button, a Last Sanitized date label, and a Most Booked badge tag on eligible products. Use mock/demo data seeded from the order store.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-nearest-centers-section-as-a-card-grid-layout-each-center-card-shows-center-name-address-number-of-available-products-trial-slots-available-count-and-a-visit-center-button-display-at-least-4-demo-center-cards-include-a-section-heading-and-a-brief-subtitle",
+      "title": "Build the Nearest Centers section as a card grid layout. Each center card shows: center name, address, number of available products, trial slots available count, and a Visit Center button. Display at least 4 demo center cards. Include a section heading and a brief subtitle.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-vendor-promotion-section-as-a-full-width-luxury-background-panel-include-the-headline-own-premium-collection-earn-with-us-two-ctas-become-vendor-gold-gradient-and-learn-more-outlined-and-three-benefit-highlights-commission-benefits-secure-inventory-management-and-transparent-payout-use-a-deep-dark-or-rich-emerald-background-with-gold-text-accents",
+      "title": "Build the Vendor Promotion section as a full-width luxury background panel. Include the headline 'Own Premium Collection? Earn with Us.', two CTAs: 'Become Vendor' (gold gradient) and 'Learn More' (outlined), and three benefit highlights: Commission Benefits, Secure Inventory Management, and Transparent Payout. Use a deep dark or rich emerald background with gold text accents.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-customer-testimonials-section-as-an-auto-playing-carousel-each-slide-shows-customer-name-star-rating-customer-avatar-image-testimonial-text-and-the-rental-product-name-they-rented-include-at-least-4-demo-testimonials-representing-real-bride-reviews-trial-experience-feedback-and-center-experience-add-prev-next-navigation-controls",
+      "title": "Build the Customer Testimonials section as an auto-playing carousel. Each slide shows: customer name, star rating, customer avatar image, testimonial text, and the rental product name they rented. Include at least 4 demo testimonials representing real bride reviews, trial experience feedback, and center experience. Add prev/next navigation controls.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-site-footer-with-five-link-columns-about-us-with-company-description-platform-links-jewellery-bridal-sets-party-wear-designer-dresses-for-business-become-vendor-center-login-partner-with-us-legal-privacy-policy-refund-policy-vendor-policy-terms-conditions-and-contact-us-email-phone-address-add-a-bottom-bar-with-payment-method-icons-gst-registration-info-and-company-address-include-social-media-icon-links",
+      "title": "Redesign the site footer with five link columns: About Us (with company description), Platform links (Jewellery, Bridal Sets, Party Wear, Designer Dresses), For Business (Become Vendor, Center Login, Partner With Us), Legal (Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions), and Contact Us (email, phone, address). Add a bottom bar with payment method icons, GST registration info, and company address. Include social media icon links.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-conversion-optimization-ui-elements-to-the-home-page-1-a-sticky-book-trial-floating-button-fixed-to-the-bottom-of-the-viewport-on-mobile-2-a-whatsapp-floating-action-button-fixed-to-the-bottom-right-corner-3-a-recently-booked-toast-notification-that-auto-appears-after-5-seconds-showing-a-mock-booking-such-as-priya-just-booked-a-trial-for-bridal-lehenga-4-a-countdown-timer-component-within-the-hero-section-showing-a-limited-time-offer-countdown-in-hours-minutes-and-seconds",
+      "title": "Add conversion optimization UI elements to the home page: (1) A sticky Book Trial floating button fixed to the bottom of the viewport on mobile. (2) A WhatsApp floating action button fixed to the bottom-right corner. (3) A Recently Booked toast notification that auto-appears after 5 seconds showing a mock booking such as 'Priya just booked a trial for Bridal Lehenga'. (4) A countdown timer component within the hero section showing a limited-time offer countdown in hours, minutes, and seconds.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-entire-home-page-is-fully-mobile-first-responsive-apply-lazy-loading-to-all-product-and-category-images-add-seo-meta-tags-to-the-html-head-title-description-and-open-graph-tags-for-social-sharing-add-structured-data-as-a-json-ld-script-tag-using-the-product-listing-schema-for-the-platform",
+      "title": "Ensure the entire home page is fully mobile-first responsive. Apply lazy loading to all product and category images. Add SEO meta tags to the HTML head: title, description, and Open Graph tags for social sharing. Add structured data as a JSON-LD script tag using the product listing schema for the platform.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Role-based auth system (JWT + Refresh Token) for Customer, Vendor, Center, Admin with permission control matrix",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Public home page with hero banner, category sections, nearest centers, featured vendors, how it works, sanitization badge, book trial CTA",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Customer module: register/login, KYC upload, browse/filter products, book trial slot, rental booking, online payment, wallet+deposit management, order tracking, rental history, dispute raise",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Vendor module: registration with GST+bank KYC, product upload (images/video/price/deposit), send product to center, inventory status tracking, earnings/commission/payout history",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Center module: receive inventory, QC verification, trial slot management, POS walk-in booking, sanitization workflow with image proof upload, sanitized tag generation, handover confirmation, return QC, damage charge entry",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Admin module: approve vendors/centers/products, set commission/center share %, platform revenue view, override orders, force refund, release payout, dispute management, GST reports, analytics dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Payment & finance engine: Razorpay/PhonePe/UPI integration, wallet system, security deposit lock/refund/deduct, commission calculation (Rental - Admin Commission - Center Share = Vendor Net)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "End-to-end order workflow engine with automated status transitions, sanitization trigger after payment, auto payout after return QC, auto deposit refund",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "SMS + Email notifications at each workflow stage; low inventory alerts to vendor",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Role-based dashboards with overview cards, revenue/rental/performance charts, order/product/payout tables, date/status filters, CSV export, notifications",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Full MySQL normalized schema: users, products, trial_bookings, orders, payments, payouts, sanitization_logs, audit_logs",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Security: rate limiting, payment webhook verification, audit logs, KYC data encryption",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Optional advanced features: AI damage detection (image compare), center/vendor rating system, subscription plans, featured listing boost, referral program",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Implement the backend data model and workflow engine with the following core data structures: Users (id, role, name, email, phone, kyc_status), Products (id, vendor_id, center_id, rental_price, deposit_amount, availability_status, sanitization_status), TrialBookings (id, customer_id, product_id, center_id, trial_date, status), Orders (id, customer_id, product_id, rental_start, rental_end, status), Payments (id, order_id, type, amount, status), Payouts (id, vendor_id, order_id, admin_commission, center_share, net_payout, payout_status), SanitizationLogs, and AuditLogs. Implement automated order status transitions, sanitization trigger after payment confirmation, payout calculation using formula (Rental Price − Admin Commission − Center Share = Vendor Net), and security deposit hold/refund/deduct logic.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Redesign public home page per PRD: 10-section layout (Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer), Royal Gold/Deep Black/Ivory/Burgundy palette, Playfair Display + Poppins typography, conversion elements (sticky Book Trial button, WhatsApp float, countdown, recently booked popup, exit intent popup), SEO meta tags, structured data, Google Analytics, mobile-first responsive",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Multi-Vendor Jewellery & Clothes Rental Platform",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

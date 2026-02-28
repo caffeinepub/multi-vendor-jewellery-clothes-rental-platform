@@ -1,0 +1,278 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-rebuild-the-public-home-page-frontend-src-pages-home-tsx-with-a-full-10-section-layout-in-this-order-hero-trust-strip-featured-categories-how-it-works-trending-products-nearest-centers-vendor-cta-testimonials-footer-use-the-design-system-royal-gold-c6a75e-primary-deep-black-111111-secondary-ivory-white-f9f6f1-background-burgundy-7a1e2c-accent-playfair-display-headings-poppins-inter-body-rounded-xl-12px-cards-soft-shadows-gold-gradient-buttons-smooth-scroll-animations-and-elegant-fade-in-transitions-on-scroll",
+      "featureTitle": "Rebuild the public home page (frontend/src/pages/Home.tsx) with a full 10-section layout in this order: Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer. Use the design system: Royal Gold (#C6A75E) primary, Deep Black (#111111) secondary, Ivory White (#F9F6F1) background, Burgundy (#7A1E2C) accent, Playfair Display headings, Poppins/Inter body, rounded-xl (12px) cards, soft shadows, gold gradient buttons, smooth scroll animations, and elegant fade-in transitions on scroll.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/Home.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-redesign-the-header-and-navigation-bar-on-the-public-home-page-add-a-top-utility-bar-with-a-center-location-selector-labeled-choose-center-a-contact-support-link-a-become-a-vendor-button-and-login-register-controls-add-a-main-navigation-menu-with-links-jewellery-bridal-sets-party-wear-designer-dresses-how-it-works-centers-become-vendor-include-an-integrated-search-bar-with-inputs-for-product-name-center-filter-and-price-range-filter",
+      "featureTitle": "Redesign the Header and Navigation bar on the public home page. Add a top utility bar with: a center location selector labeled Choose Center, a contact support link, a Become a Vendor button, and Login/Register controls. Add a main navigation menu with links: Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor. Include an integrated search bar with inputs for product name, center filter, and price range filter.",
+      "files": [
+        "frontend/src/components/home/SearchBar.tsx",
+        "frontend/src/components/layout/Header.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-hero-section-as-a-two-column-full-width-section-left-column-headline-try-before-you-rent-luxury-jewellery-designer-wear-subheading-book-a-trial-at-your-nearest-center-fully-sanitized-zero-compromise-and-two-cta-buttons-primary-book-trial-and-secondary-explore-collection-right-column-a-premium-model-image-showing-jewellery-and-bridal-dress-on-a-subtle-gold-gradient-background-use-the-generated-hero-banner-image-asset-hero-banner-dim-1440x800-png",
+      "featureTitle": "Build the Hero Section as a two-column full-width section. Left column: headline 'Try Before You Rent - Luxury Jewellery & Designer Wear', subheading 'Book a trial at your nearest center. Fully sanitized. Zero compromise.', and two CTA buttons: primary 'Book Trial' and secondary 'Explore Collection'. Right column: a premium model image showing jewellery and bridal dress on a subtle gold gradient background. Use the generated hero banner image asset (hero-banner.dim_1440x800.png).",
+      "files": [
+        "frontend/src/components/home/HeroSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-trust-and-safety-strip-section-as-a-4-column-icon-row-immediately-below-the-hero-columns-1-sanitized-verified-2-secure-deposit-protection-3-physical-trial-available-4-safe-payments-each-column-shows-a-large-icon-and-a-label-use-an-ivory-or-light-gold-background-to-distinguish-the-strip-from-the-hero",
+      "featureTitle": "Build the Trust and Safety Strip section as a 4-column icon row immediately below the hero. Columns: (1) Sanitized & Verified, (2) Secure Deposit Protection, (3) Physical Trial Available, (4) Safe Payments. Each column shows a large icon and a label. Use an ivory or light gold background to distinguish the strip from the hero.",
+      "files": [
+        "frontend/src/components/home/TrustStripSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-featured-categories-section-as-a-4-column-premium-card-grid-categories-bridal-jewellery-wedding-lehenga-party-wear-jewellery-designer-gowns-each-card-shows-the-category-image-category-name-and-an-explore-now-button-on-hover-apply-a-slight-zoom-transform-and-a-golden-border-glow-use-the-generated-category-image-assets",
+      "featureTitle": "Build the Featured Categories section as a 4-column premium card grid. Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns. Each card shows the category image, category name, and an Explore Now button. On hover, apply a slight zoom transform and a golden border glow. Use the generated category image assets.",
+      "files": [
+        "frontend/src/components/home/CategorySection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-redesign-the-how-it-works-section-as-a-4-step-horizontal-timeline-layout-with-step-icons-and-connector-lines-between-them-steps-1-vendor-sends-to-center-2-book-trial-at-center-3-select-pay-4-sanitized-delivered-end-the-section-with-a-prominent-book-your-trial-today-cta-button",
+      "featureTitle": "Redesign the How It Works section as a 4-step horizontal timeline layout with step icons and connector lines between them. Steps: (1) Vendor Sends to Center, (2) Book Trial at Center, (3) Select & Pay, (4) Sanitized & Delivered. End the section with a prominent 'Book Your Trial Today' CTA button.",
+      "files": [
+        "frontend/src/components/home/HowItWorksSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-trending-products-section-showing-a-responsive-grid-of-3-to-4-product-cards-per-row-each-product-card-displays-product-image-rental-price-per-day-security-deposit-amount-available-center-name-a-book-trial-button-a-last-sanitized-date-label-and-a-most-booked-badge-tag-on-eligible-products-use-mock-demo-data-seeded-from-the-order-store",
+      "featureTitle": "Build a Trending Products section showing a responsive grid of 3 to 4 product cards per row. Each product card displays: product image, rental price per day, security deposit amount, available center name, a Book Trial button, a Last Sanitized date label, and a Most Booked badge tag on eligible products. Use mock/demo data seeded from the order store.",
+      "files": [
+        "frontend/src/components/home/TrendingProductsSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-nearest-centers-section-as-a-card-grid-layout-each-center-card-shows-center-name-address-number-of-available-products-trial-slots-available-count-and-a-visit-center-button-display-at-least-4-demo-center-cards-include-a-section-heading-and-a-brief-subtitle",
+      "featureTitle": "Build the Nearest Centers section as a card grid layout. Each center card shows: center name, address, number of available products, trial slots available count, and a Visit Center button. Display at least 4 demo center cards. Include a section heading and a brief subtitle.",
+      "files": [
+        "frontend/src/components/home/NearestCentersSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-vendor-promotion-section-as-a-full-width-luxury-background-panel-include-the-headline-own-premium-collection-earn-with-us-two-ctas-become-vendor-gold-gradient-and-learn-more-outlined-and-three-benefit-highlights-commission-benefits-secure-inventory-management-and-transparent-payout-use-a-deep-dark-or-rich-emerald-background-with-gold-text-accents",
+      "featureTitle": "Build the Vendor Promotion section as a full-width luxury background panel. Include the headline 'Own Premium Collection? Earn with Us.', two CTAs: 'Become Vendor' (gold gradient) and 'Learn More' (outlined), and three benefit highlights: Commission Benefits, Secure Inventory Management, and Transparent Payout. Use a deep dark or rich emerald background with gold text accents.",
+      "files": [
+        "frontend/src/components/home/VendorPromotionSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-customer-testimonials-section-as-an-auto-playing-carousel-each-slide-shows-customer-name-star-rating-customer-avatar-image-testimonial-text-and-the-rental-product-name-they-rented-include-at-least-4-demo-testimonials-representing-real-bride-reviews-trial-experience-feedback-and-center-experience-add-prev-next-navigation-controls",
+      "featureTitle": "Build the Customer Testimonials section as an auto-playing carousel. Each slide shows: customer name, star rating, customer avatar image, testimonial text, and the rental product name they rented. Include at least 4 demo testimonials representing real bride reviews, trial experience feedback, and center experience. Add prev/next navigation controls.",
+      "files": [
+        "frontend/src/components/home/TestimonialsSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-redesign-the-site-footer-with-five-link-columns-about-us-with-company-description-platform-links-jewellery-bridal-sets-party-wear-designer-dresses-for-business-become-vendor-center-login-partner-with-us-legal-privacy-policy-refund-policy-vendor-policy-terms-conditions-and-contact-us-email-phone-address-add-a-bottom-bar-with-payment-method-icons-gst-registration-info-and-company-address-include-social-media-icon-links",
+      "featureTitle": "Redesign the site footer with five link columns: About Us (with company description), Platform links (Jewellery, Bridal Sets, Party Wear, Designer Dresses), For Business (Become Vendor, Center Login, Partner With Us), Legal (Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions), and Contact Us (email, phone, address). Add a bottom bar with payment method icons, GST registration info, and company address. Include social media icon links.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-conversion-optimization-ui-elements-to-the-home-page-1-a-sticky-book-trial-floating-button-fixed-to-the-bottom-of-the-viewport-on-mobile-2-a-whatsapp-floating-action-button-fixed-to-the-bottom-right-corner-3-a-recently-booked-toast-notification-that-auto-appears-after-5-seconds-showing-a-mock-booking-such-as-priya-just-booked-a-trial-for-bridal-lehenga-4-a-countdown-timer-component-within-the-hero-section-showing-a-limited-time-offer-countdown-in-hours-minutes-and-seconds",
+      "featureTitle": "Add conversion optimization UI elements to the home page: (1) A sticky Book Trial floating button fixed to the bottom of the viewport on mobile. (2) A WhatsApp floating action button fixed to the bottom-right corner. (3) A Recently Booked toast notification that auto-appears after 5 seconds showing a mock booking such as 'Priya just booked a trial for Bridal Lehenga'. (4) A countdown timer component within the hero section showing a limited-time offer countdown in hours, minutes, and seconds.",
+      "files": [
+        "frontend/src/components/home/CountdownTimer.tsx",
+        "frontend/src/components/home/HeroSection.tsx",
+        "frontend/src/components/home/RecentlyBookedToast.tsx",
+        "frontend/src/components/home/StickyBookTrialButton.tsx",
+        "frontend/src/components/home/WhatsAppFAB.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-entire-home-page-is-fully-mobile-first-responsive-apply-lazy-loading-to-all-product-and-category-images-add-seo-meta-tags-to-the-html-head-title-description-and-open-graph-tags-for-social-sharing-add-structured-data-as-a-json-ld-script-tag-using-the-product-listing-schema-for-the-platform",
+      "featureTitle": "Ensure the entire home page is fully mobile-first responsive. Apply lazy loading to all product and category images. Add SEO meta tags to the HTML head: title, description, and Open Graph tags for social sharing. Add structured data as a JSON-LD script tag using the product listing schema for the platform.",
+      "files": [
+        "frontend/src/components/home/CategorySection.tsx",
+        "frontend/src/components/home/HeroSection.tsx",
+        "frontend/src/components/home/NearestCentersSection.tsx",
+        "frontend/src/components/home/TestimonialsSection.tsx",
+        "frontend/src/components/home/TrendingProductsSection.tsx",
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

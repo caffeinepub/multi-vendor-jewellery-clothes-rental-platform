@@ -1,0 +1,296 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Redesign Public Home Page – Premium 10-Section Layout with Conversion Elements",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "summary": "Rebuild the public home page with a full 10-section layout using the luxury design system",
+      "acceptanceCriteria": [
+        "All 10 sections render in the specified order on the home page",
+        "Color tokens match #C6A75E, #111111, #F9F6F1, and #7A1E2C exactly",
+        "Headings use Playfair Display; body text uses Poppins or Inter",
+        "Cards have 12px border radius and soft drop shadows",
+        "CTA buttons have gold gradient styling",
+        "Sections fade in as they enter the viewport"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Replace the existing Home page component with a new structure that renders all 10 sections in order: Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer. Remove existing section imports and add new section components."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS custom properties for the luxury color palette (Royal Gold #C6A75E, Deep Black #111111, Ivory White #F9F6F1, Burgundy #7A1E2C) to both light and dark theme sections. Add font imports for Playfair Display if not already present. Define utility classes for gold gradient buttons, soft shadows, and fade-in animations."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the theme with custom color tokens matching the luxury palette (royalGold, deepBlack, ivoryWhite, burgundy). Configure rounded-xl (12px) as a named variant. Add custom shadow utilities for soft drop shadows. Ensure Playfair Display is configured in the fontFamily extend section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Redesign the Header and Navigation bar with utility bar, main menu, and integrated search",
+      "acceptanceCriteria": [
+        "Top utility bar displays all four elements: location selector, contact support, vendor join button, login/register",
+        "Main nav menu renders all seven links",
+        "Search bar is present with product name, center, and price range inputs",
+        "Header is sticky and collapses to a mobile hamburger menu on small screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Replace the existing header with a two-tier structure. Top tier: add a utility bar with Choose Center location selector (dropdown), Contact Support link, Become a Vendor button, and Login/Register controls. Main tier: replace nav links with the seven required menu items (Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor). Add an integrated search bar component with three inputs (product name text field, center filter dropdown, price range slider or dual inputs). Ensure sticky positioning and responsive collapse to hamburger menu on mobile."
+        },
+        {
+          "path": "frontend/src/components/home/SearchBar.tsx",
+          "operation": "create",
+          "description": "Create a new SearchBar component with three filter inputs: product name (text), center filter (select/dropdown), and price range (dual number inputs or range slider). Style with the luxury design system. Include a search/filter button. On filter changes, update URL query params and optionally trigger navigation to /products with filters applied."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Build the Hero Section as a two-column layout with headline, CTAs, and generated hero banner image",
+      "acceptanceCriteria": [
+        "Hero renders with two-column layout on desktop, stacked on mobile",
+        "Headline and subheading text match exactly",
+        "Two CTA buttons are present: Book Trial (gold gradient) and Explore Collection (outlined)",
+        "Right side displays the hero banner image on a gold gradient background",
+        "Section is full viewport height on desktop"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Replace the existing hero with a two-column layout. Left column: headline 'Try Before You Rent - Luxury Jewellery & Designer Wear', subheading 'Book a trial at your nearest center. Fully sanitized. Zero compromise.', primary CTA 'Book Trial' (gold gradient button linking to /products or trial booking flow), and secondary CTA 'Explore Collection' (outlined button linking to /products). Right column: display the generated hero banner image using the workspace path frontend/public/assets/generated/hero-banner.dim_1440x800.png on a subtle gold gradient background. Make the section full viewport height (min-h-screen) on desktop and stack columns on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Build the Trust and Safety Strip section as a 4-column icon row",
+      "acceptanceCriteria": [
+        "Four trust columns render with correct icons and labels",
+        "Strip has a visually distinct background (ivory or light gold)",
+        "Collapses to a 2x2 grid on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/TrustStripSection.tsx",
+          "operation": "create",
+          "description": "Create a new TrustStripSection component rendering a 4-column row with large icons and labels: (1) Sanitized & Verified, (2) Secure Deposit Protection, (3) Physical Trial Available, (4) Safe Payments. Use an ivory (#F9F6F1) or light gold background to distinguish from the hero. Apply responsive grid layout (4 columns on desktop, 2x2 grid on mobile). Use icons from lucide-react or similar."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Build the Featured Categories section as a 4-column premium card grid with generated category images",
+      "acceptanceCriteria": [
+        "Four category cards render in a 4-column grid on desktop, 2-column on tablet, 1-column on mobile",
+        "Each card has the category image, name, and Explore Now button",
+        "Hover triggers scale transform and gold border glow",
+        "Cards have 12px border radius and soft shadow"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/CategorySection.tsx",
+          "operation": "modify",
+          "description": "Replace the existing CategorySection with a 4-card grid layout. Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns. Use the generated category images: frontend/public/assets/generated/category-bridal-jewellery.dim_600x750.png, frontend/public/assets/generated/category-wedding-lehenga.dim_600x750.png, frontend/public/assets/generated/category-party-jewellery.dim_600x750.png, frontend/public/assets/generated/category-designer-gowns.dim_600x750.png. Each card shows the category image, name, and an Explore Now button linking to /products with category filter. Apply hover effects: scale transform (scale-105) and gold border glow. Ensure 12px border radius (rounded-xl) and soft drop shadow. Responsive: 4 columns desktop, 2 tablet, 1 mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Redesign the How It Works section as a 4-step horizontal timeline with CTA button",
+      "acceptanceCriteria": [
+        "Four steps render with numbered icons and connector lines on desktop",
+        "Step labels match exactly as specified",
+        "Book Your Trial Today CTA button renders below the steps",
+        "Layout stacks vertically on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/HowItWorksSection.tsx",
+          "operation": "modify",
+          "description": "Replace the existing HowItWorksSection with a 4-step horizontal timeline. Steps with numbered icons and connector lines: (1) Vendor Sends to Center, (2) Book Trial at Center, (3) Select & Pay, (4) Sanitized & Delivered. Add a prominent 'Book Your Trial Today' gold gradient CTA button below the steps linking to /products or trial booking. Layout should be horizontal with connector lines on desktop, and stack vertically on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Build a Trending Products section showing a responsive grid of product cards with demo data",
+      "acceptanceCriteria": [
+        "Product grid renders 3-4 columns on desktop, 2 on tablet, 1 on mobile",
+        "Each card shows image, rental price per day, deposit, center name, and Book Trial button",
+        "Last Sanitized date label is visible on each card",
+        "Most Booked badge appears on at least 2 demo products",
+        "Section heading is present"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/TrendingProductsSection.tsx",
+          "operation": "create",
+          "description": "Create a new TrendingProductsSection component rendering a responsive grid of 3-4 product cards per row on desktop, 2 on tablet, 1 on mobile. Use demo/mock data seeded from the order store (reference frontend/src/store/orderStore.ts patterns). Each card displays: product image (use placeholder or sample images), rental price per day (₹XXX/day), security deposit amount (₹XXXX deposit), available center name, Book Trial button (gold gradient), Last Sanitized date label (e.g., 'Last Sanitized: 2 days ago'), and a Most Booked badge tag on at least 2 demo products. Include a section heading 'Trending Products' or similar."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Build the Nearest Centers section as a card grid layout with demo center data",
+      "acceptanceCriteria": [
+        "At least 4 center cards render with all required fields",
+        "Visit Center button is present on each card",
+        "Section has a heading and subtitle",
+        "Grid is responsive (2-column desktop, 1-column mobile)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/NearestCentersSection.tsx",
+          "operation": "modify",
+          "description": "Replace the existing NearestCentersSection with a card grid layout displaying at least 4 demo center cards. Each card shows: center name, address, number of available products (e.g., '120 Products'), trial slots available count (e.g., '15 Slots Available'), and a Visit Center button (outlined or secondary style) linking to /products with center filter. Add a section heading ('Nearest Rental Centers' or similar) and a brief subtitle. Responsive grid: 2 columns on desktop, 1 column on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Build the Vendor Promotion section as a full-width luxury background panel with CTAs and benefits",
+      "acceptanceCriteria": [
+        "Section renders with dark/emerald luxury background and gold accents",
+        "Headline text matches exactly",
+        "Both CTA buttons render with correct styles",
+        "Three benefit highlights are displayed with icons or bullet labels"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/VendorPromotionSection.tsx",
+          "operation": "create",
+          "description": "Create a new VendorPromotionSection component as a full-width panel with a deep dark (#111111) or rich emerald background and gold text accents. Include the headline 'Own Premium Collection? Earn with Us.' centered or prominently displayed. Add two CTA buttons: 'Become Vendor' (gold gradient) linking to vendor registration, and 'Learn More' (outlined) linking to vendor info page. Display three benefit highlights with icons or labels: Commission Benefits, Secure Inventory Management, and Transparent Payout. Use luxury styling consistent with the design system."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Build the Customer Testimonials section as an auto-playing carousel with demo reviews",
+      "acceptanceCriteria": [
+        "Carousel auto-advances every 4 to 5 seconds",
+        "Each slide shows avatar, name, star rating, testimonial text, and product name",
+        "Prev/next navigation controls are functional",
+        "At least 4 demo testimonials are seeded"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/TestimonialsSection.tsx",
+          "operation": "create",
+          "description": "Create a new TestimonialsSection component as an auto-playing carousel. Each slide displays: customer name, star rating (5 stars rendered as icons or text), customer avatar image (use placeholder avatars or initials), testimonial text (quote), and the rental product name they rented. Seed at least 4 demo testimonials covering real bride reviews, trial experience feedback, and center experience. Implement auto-advance every 4-5 seconds using setInterval or a carousel library. Add prev/next navigation controls (arrow buttons). Use a carousel library (e.g., embla-carousel-react) or custom implementation with React state and transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Redesign the site footer with five link columns, bottom bar, and social media icons",
+      "acceptanceCriteria": [
+        "Footer renders five organized link columns",
+        "Bottom bar shows payment icons, GST info, and company address",
+        "Social media icons are present",
+        "Footer is responsive and stacks to single column on mobile"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Replace the existing footer with a five-column layout. Columns: (1) About Us (with company description text), (2) Platform (links: Jewellery, Bridal Sets, Party Wear, Designer Dresses), (3) For Business (links: Become Vendor, Center Login, Partner With Us), (4) Legal (links: Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions), (5) Contact Us (email, phone, address text). Add a bottom bar below the columns showing payment method icons (Visa, Mastercard, UPI, etc.), GST registration info text, and company address. Include social media icon links (Facebook, Instagram, Twitter, LinkedIn). Ensure the footer is fully responsive and stacks to single column on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Add conversion optimization UI elements: sticky CTA, WhatsApp FAB, booking toast, and countdown timer",
+      "acceptanceCriteria": [
+        "Sticky Book Trial button is visible on mobile at bottom of screen",
+        "WhatsApp FAB renders at bottom-right with WhatsApp green color",
+        "Recently Booked toast pops up after approximately 5 seconds on page load",
+        "Countdown timer renders in hero section showing hours/minutes/seconds"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/StickyBookTrialButton.tsx",
+          "operation": "create",
+          "description": "Create a StickyBookTrialButton component that renders a fixed-position button at the bottom of the viewport on mobile screens (hidden on desktop). Button text: 'Book Trial'. Use gold gradient styling. Position: fixed bottom-0 with full-width or centered. Links to /products or trial booking flow. Add z-index to ensure visibility over other content."
+        },
+        {
+          "path": "frontend/src/components/home/WhatsAppFAB.tsx",
+          "operation": "create",
+          "description": "Create a WhatsAppFAB (Floating Action Button) component that renders a fixed-position circular button at the bottom-right corner. Use WhatsApp green color (#25D366). Icon: WhatsApp logo or chat bubble icon. Links to whatsapp://send?phone=XXXXXXXXXX or https://wa.me/XXXXXXXXXX with a placeholder phone number. Position: fixed bottom-4 right-4 with z-index above other content."
+        },
+        {
+          "path": "frontend/src/components/home/RecentlyBookedToast.tsx",
+          "operation": "create",
+          "description": "Create a RecentlyBookedToast component that auto-appears after 5 seconds on page load showing a mock booking notification (e.g., 'Priya just booked a trial for Bridal Lehenga'). Use a toast/notification UI component (shadcn/ui toast or custom). Include a small avatar or icon, booking text, and auto-dismiss after a few seconds. Position: fixed top or bottom-left corner. Implement using useEffect with a 5-second delay on mount."
+        },
+        {
+          "path": "frontend/src/components/home/CountdownTimer.tsx",
+          "operation": "create",
+          "description": "Create a CountdownTimer component that displays a limited-time offer countdown in hours, minutes, and seconds format (HH:MM:SS). Implement using React state and setInterval to update every second. Set a demo target time (e.g., 24 hours from now or a fixed future date). Style with luxury design system (gold accents, clear typography). This component will be embedded within the hero section."
+        },
+        {
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Embed the CountdownTimer component within the hero section, positioned prominently (e.g., above or below the CTAs, or in a corner). Add a label like 'Limited Offer Ends In:' above the timer. Ensure it is visible on both desktop and mobile."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Wire the StickyBookTrialButton, WhatsAppFAB, and RecentlyBookedToast components into the Home page. Render them at the root level of the Home component (outside the main section flow) so they appear on top of all other content with proper fixed positioning."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Ensure mobile-first responsive design, lazy loading, SEO meta tags, and structured data",
+      "acceptanceCriteria": [
+        "All images use loading=lazy attribute",
+        "Page renders correctly on 375px, 768px, and 1280px viewports",
+        "HTML head includes title, description, og:title, og:description, og:image meta tags",
+        "A JSON-LD script tag with product schema is present in the page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Add SEO meta tags to the Home page using react-helmet-async or similar library. Include: title ('LuxeRent – Try Before You Rent Luxury Jewellery & Designer Wear'), meta description, og:title, og:description, og:image (using hero banner image URL), og:url, and twitter card tags. Add a JSON-LD script tag with structured data using the Product or ProductCollection schema, listing key products or categories from the platform."
+        },
+        {
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to the hero banner image. Ensure the section is fully responsive using Tailwind breakpoints (stack on mobile, two-column on desktop)."
+        },
+        {
+          "path": "frontend/src/components/home/CategorySection.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to all category card images. Ensure responsive grid layout (1 column mobile, 2 tablet, 4 desktop) using Tailwind grid utilities."
+        },
+        {
+          "path": "frontend/src/components/home/TrendingProductsSection.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to all product card images. Ensure responsive grid layout (1 column mobile, 2 tablet, 3-4 desktop)."
+        },
+        {
+          "path": "frontend/src/components/home/NearestCentersSection.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to any center images if present. Ensure responsive grid (1 column mobile, 2 desktop)."
+        },
+        {
+          "path": "frontend/src/components/home/TestimonialsSection.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to customer avatar images in the carousel. Ensure the carousel is fully responsive and touch-friendly on mobile."
+        }
+      ]
+    }
+  ]
+}

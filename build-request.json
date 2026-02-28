@@ -1,0 +1,311 @@
+{
+  "kind": "build_request",
+  "title": "Redesign Public Home Page – Premium 10-Section Layout with Conversion Elements",
+  "projectName": "LuxeRent Platform",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Rebuild the public home page (frontend/src/pages/Home.tsx) with a full 10-section layout in this order: Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer. Use the design system: Royal Gold (#C6A75E) primary, Deep Black (#111111) secondary, Ivory White (#F9F6F1) background, Burgundy (#7A1E2C) accent, Playfair Display headings, Poppins/Inter body, rounded-xl (12px) cards, soft shadows, gold gradient buttons, smooth scroll animations, and elegant fade-in transitions on scroll.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Color Palette: Primary: Royal Gold (#C6A75E), Secondary: Deep Black (#111111), Background: Ivory White (#F9F6F1), Accent: Burgundy (#7A1E2C)",
+          "Headings: Playfair Display (Luxury Feel), Body: Poppins / Inter",
+          "Rounded 12px Cards, Soft Shadows, Gold Gradient Buttons, Smooth Scroll Animation, Elegant Fade-In Transitions"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All 10 sections render in the specified order on the home page",
+        "Color tokens match #C6A75E, #111111, #F9F6F1, and #7A1E2C exactly",
+        "Headings use Playfair Display; body text uses Poppins or Inter",
+        "Cards have 12px border radius and soft drop shadows",
+        "CTA buttons have gold gradient styling",
+        "Sections fade in as they enter the viewport"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Redesign the Header and Navigation bar on the public home page. Add a top utility bar with: a center location selector labeled Choose Center, a contact support link, a Become a Vendor button, and Login/Register controls. Add a main navigation menu with links: Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor. Include an integrated search bar with inputs for product name, center filter, and price range filter.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Top Bar: Location Selector (Choose Center), Contact Support, Vendor Join Button, Login / Register",
+          "Main Menu: Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor",
+          "Search Bar: Search by product, Filter by center, Filter by price range"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Top utility bar displays all four elements: location selector, contact support, vendor join button, login/register",
+        "Main nav menu renders all seven links",
+        "Search bar is present with product name, center, and price range inputs",
+        "Header is sticky and collapses to a mobile hamburger menu on small screens"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Build the Hero Section as a two-column full-width section. Left column: headline 'Try Before You Rent - Luxury Jewellery & Designer Wear', subheading 'Book a trial at your nearest center. Fully sanitized. Zero compromise.', and two CTA buttons: primary 'Book Trial' and secondary 'Explore Collection'. Right column: a premium model image showing jewellery and bridal dress on a subtle gold gradient background. Use the generated hero banner image asset (hero-banner.dim_1440x800.png).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Headline: Try Before You Rent - Luxury Jewellery & Designer Wear",
+          "Subheading: Book a trial at your nearest center. Fully sanitized. Zero compromise.",
+          "CTA Buttons: Book Trial, Explore Collection",
+          "Right Side: Premium Model Image (Jewellery + Bridal Dress), Subtle Gold Gradient Background"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero renders with two-column layout on desktop, stacked on mobile",
+        "Headline and subheading text match exactly",
+        "Two CTA buttons are present: Book Trial (gold gradient) and Explore Collection (outlined)",
+        "Right side displays the hero banner image on a gold gradient background",
+        "Section is full viewport height on desktop"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Build the Trust and Safety Strip section as a 4-column icon row immediately below the hero. Columns: (1) Sanitized & Verified, (2) Secure Deposit Protection, (3) Physical Trial Available, (4) Safe Payments. Each column shows a large icon and a label. Use an ivory or light gold background to distinguish the strip from the hero.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Icons Row (4 Columns): Sanitized & Verified, Secure Deposit Protection, Physical Trial Available, Safe Payments"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Four trust columns render with correct icons and labels",
+        "Strip has a visually distinct background (ivory or light gold)",
+        "Collapses to a 2x2 grid on mobile"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Build the Featured Categories section as a 4-column premium card grid. Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns. Each card shows the category image, category name, and an Explore Now button. On hover, apply a slight zoom transform and a golden border glow. Use the generated category image assets.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Layout: 4 Grid Premium Cards",
+          "Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns",
+          "Hover Effect: Slight zoom, Golden border glow"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Four category cards render in a 4-column grid on desktop, 2-column on tablet, 1-column on mobile",
+        "Each card has the category image, name, and Explore Now button",
+        "Hover triggers scale transform and gold border glow",
+        "Cards have 12px border radius and soft shadow"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Redesign the How It Works section as a 4-step horizontal timeline layout with step icons and connector lines between them. Steps: (1) Vendor Sends to Center, (2) Book Trial at Center, (3) Select & Pay, (4) Sanitized & Delivered. End the section with a prominent 'Book Your Trial Today' CTA button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "4-Step Process Layout (Icons + Timeline)",
+          "Vendor Sends to Center, Book Trial at Center, Select & Pay, Sanitized & Delivered",
+          "CTA Button: Book Your Trial Today"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Four steps render with numbered icons and connector lines on desktop",
+        "Step labels match exactly as specified",
+        "Book Your Trial Today CTA button renders below the steps",
+        "Layout stacks vertically on mobile"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Build a Trending Products section showing a responsive grid of 3 to 4 product cards per row. Each product card displays: product image, rental price per day, security deposit amount, available center name, a Book Trial button, a Last Sanitized date label, and a Most Booked badge tag on eligible products. Use mock/demo data seeded from the order store.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Grid Layout: 3 or 4 products per row",
+          "Show: Product Image, Rental Price / Day, Security Deposit, Available Center, Book Trial Button",
+          "Add: Last Sanitized: Date, Most Booked Tag"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product grid renders 3-4 columns on desktop, 2 on tablet, 1 on mobile",
+        "Each card shows image, rental price per day, deposit, center name, and Book Trial button",
+        "Last Sanitized date label is visible on each card",
+        "Most Booked badge appears on at least 2 demo products",
+        "Section heading is present"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Build the Nearest Centers section as a card grid layout. Each center card shows: center name, address, number of available products, trial slots available count, and a Visit Center button. Display at least 4 demo center cards. Include a section heading and a brief subtitle.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Map + Card Layout",
+          "Show: Center Name, Address, Available Products, Trial Slots Available, Visit Center Button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 4 center cards render with all required fields",
+        "Visit Center button is present on each card",
+        "Section has a heading and subtitle",
+        "Grid is responsive (2-column desktop, 1-column mobile)"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Build the Vendor Promotion section as a full-width luxury background panel. Include the headline 'Own Premium Collection? Earn with Us.', two CTAs: 'Become Vendor' (gold gradient) and 'Learn More' (outlined), and three benefit highlights: Commission Benefits, Secure Inventory Management, and Transparent Payout. Use a deep dark or rich emerald background with gold text accents.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Headline: Own Premium Collection? Earn with Us.",
+          "CTA: Become Vendor, Learn More",
+          "Show: Commission Benefits, Secure Inventory Management, Transparent Payout"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section renders with dark/emerald luxury background and gold accents",
+        "Headline text matches exactly",
+        "Both CTA buttons render with correct styles",
+        "Three benefit highlights are displayed with icons or bullet labels"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Build the Customer Testimonials section as an auto-playing carousel. Each slide shows: customer name, star rating, customer avatar image, testimonial text, and the rental product name they rented. Include at least 4 demo testimonials representing real bride reviews, trial experience feedback, and center experience. Add prev/next navigation controls.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Carousel: Real Bride Reviews, Trial Experience Feedback, Center Experience",
+          "Include: Star Rating, Customer Image, Rental Product Name"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Carousel auto-advances every 4 to 5 seconds",
+        "Each slide shows avatar, name, star rating, testimonial text, and product name",
+        "Prev/next navigation controls are functional",
+        "At least 4 demo testimonials are seeded"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Redesign the site footer with five link columns: About Us (with company description), Platform links (Jewellery, Bridal Sets, Party Wear, Designer Dresses), For Business (Become Vendor, Center Login, Partner With Us), Legal (Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions), and Contact Us (email, phone, address). Add a bottom bar with payment method icons, GST registration info, and company address. Include social media icon links.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Sections: About Us, Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions, Contact Us, Social Media",
+          "Add: Payment Icons, GST Info, Company Address"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer renders five organized link columns",
+        "Bottom bar shows payment icons, GST info, and company address",
+        "Social media icons are present",
+        "Footer is responsive and stacks to single column on mobile"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Add conversion optimization UI elements to the home page: (1) A sticky Book Trial floating button fixed to the bottom of the viewport on mobile. (2) A WhatsApp floating action button fixed to the bottom-right corner. (3) A Recently Booked toast notification that auto-appears after 5 seconds showing a mock booking such as 'Priya just booked a trial for Bridal Lehenga'. (4) A countdown timer component within the hero section showing a limited-time offer countdown in hours, minutes, and seconds.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Sticky Book Trial Button",
+          "Countdown for Limited Offers",
+          "Recently Booked Popup",
+          "WhatsApp Floating Button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Sticky Book Trial button is visible on mobile at bottom of screen",
+        "WhatsApp FAB renders at bottom-right with WhatsApp green color",
+        "Recently Booked toast pops up after approximately 5 seconds on page load",
+        "Countdown timer renders in hero section showing hours/minutes/seconds"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Ensure the entire home page is fully mobile-first responsive. Apply lazy loading to all product and category images. Add SEO meta tags to the HTML head: title, description, and Open Graph tags for social sharing. Add structured data as a JSON-LD script tag using the product listing schema for the platform.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Fully Responsive (Mobile First)",
+          "Lazy Loading",
+          "SEO Optimized",
+          "Structured Data (Products)",
+          "Meta Tags Optimized"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All images use loading=lazy attribute",
+        "Page renders correctly on 375px, 768px, and 1280px viewports",
+        "HTML head includes title, description, og:title, og:description, og:image meta tags",
+        "A JSON-LD script tag with product schema is present in the page"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/ (immutable paths)",
+    "Do not modify files under frontend/src/components/ui/ (immutable paths)",
+    "Do not modify frontend/src/main.tsx (immutable path)",
+    "All backend logic must remain in the single Motoko actor at backend/main.mo",
+    "No real payment gateway integration - use simulated payment flow only",
+    "No real-time WebSocket features",
+    "No external email or SMS service integrations"
+  ],
+  "nonGoals": [
+    "Google Analytics script integration",
+    "Exit intent popup",
+    "Real WhatsApp API integration - link only",
+    "Changes to any existing role-based dashboard pages",
+    "Changes to the authentication flow or ProtectedRoute logic",
+    "Backend schema changes for this home page redesign"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Split two-panel luxury hero banner: left side deep black background with gold serif text overlay, right side Indian bridal model wearing kundan jewellery set and red lehenga against a soft gold gradient backdrop (hero-banner.dim_1440x800.png)",
+      "Bridal jewellery category card: close-up of ornate kundan gold necklace set with earrings on ivory fabric background, warm studio lighting (category-bridal-jewellery.dim_600x750.png)",
+      "Wedding lehenga category card: full-length Indian bride in crimson embroidered lehenga with dupatta, elegant indoor bridal setting (category-wedding-lehenga.dim_600x750.png)",
+      "Party wear jewellery category card: elegant gold statement necklace with green emerald stones arranged on dark velvet background (category-party-jewellery.dim_600x750.png)",
+      "Designer gowns category card: floor-length champagne gold evening gown on a mannequin against a neutral studio backdrop (category-designer-gowns.dim_600x750.png)",
+      "Sanitization guarantee badge: circular emblem with gold border, shield icon in center, text Sanitized and Verified on ivory background with subtle gold ornamental details (sanitization-badge.dim_400x400.png)"
+    ],
+    "edits": []
+  }
+}

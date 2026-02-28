@@ -1,0 +1,219 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-27T15:13:33.262Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 13,
+    "implemented": 13,
+    "items": [
+      {
+        "id": "REQ-11",
+        "summary": "Rebuild the public home page (frontend/src/pages/Home.tsx) with a full 10-section layout in this order: Hero, Trust Strip, Featured Categories, How It Works, Trending Products, Nearest Centers, Vendor CTA, Testimonials, Footer. Use the design system: Royal Gold (#C6A75E) primary, Deep Black (#111111) secondary, Ivory White (#F9F6F1) background, Burgundy (#7A1E2C) accent, Playfair Display headings, Poppins/Inter body, rounded-xl (12px) cards, soft shadows, gold gradient buttons, smooth scroll animations, and elegant fade-in transitions on scroll.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Redesign the Header and Navigation bar on the public home page. Add a top utility bar with: a center location selector labeled Choose Center, a contact support link, a Become a Vendor button, and Login/Register controls. Add a main navigation menu with links: Jewellery, Bridal Sets, Party Wear, Designer Dresses, How It Works, Centers, Become Vendor. Include an integrated search bar with inputs for product name, center filter, and price range filter.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/components/home/SearchBar.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/layout/Header.tsx",
+          "frontend/src/components/home/SearchBar.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Build the Hero Section as a two-column full-width section. Left column: headline 'Try Before You Rent - Luxury Jewellery & Designer Wear', subheading 'Book a trial at your nearest center. Fully sanitized. Zero compromise.', and two CTA buttons: primary 'Book Trial' and secondary 'Explore Collection'. Right column: a premium model image showing jewellery and bridal dress on a subtle gold gradient background. Use the generated hero banner image asset (hero-banner.dim_1440x800.png).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/HeroSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/HeroSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Build the Trust and Safety Strip section as a 4-column icon row immediately below the hero. Columns: (1) Sanitized & Verified, (2) Secure Deposit Protection, (3) Physical Trial Available, (4) Safe Payments. Each column shows a large icon and a label. Use an ivory or light gold background to distinguish the strip from the hero.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/TrustStripSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/TrustStripSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Build the Featured Categories section as a 4-column premium card grid. Categories: Bridal Jewellery, Wedding Lehenga, Party Wear Jewellery, Designer Gowns. Each card shows the category image, category name, and an Explore Now button. On hover, apply a slight zoom transform and a golden border glow. Use the generated category image assets.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/CategorySection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/CategorySection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Redesign the How It Works section as a 4-step horizontal timeline layout with step icons and connector lines between them. Steps: (1) Vendor Sends to Center, (2) Book Trial at Center, (3) Select & Pay, (4) Sanitized & Delivered. End the section with a prominent 'Book Your Trial Today' CTA button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/HowItWorksSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/HowItWorksSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Build a Trending Products section showing a responsive grid of 3 to 4 product cards per row. Each product card displays: product image, rental price per day, security deposit amount, available center name, a Book Trial button, a Last Sanitized date label, and a Most Booked badge tag on eligible products. Use mock/demo data seeded from the order store.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/TrendingProductsSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/TrendingProductsSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Build the Nearest Centers section as a card grid layout. Each center card shows: center name, address, number of available products, trial slots available count, and a Visit Center button. Display at least 4 demo center cards. Include a section heading and a brief subtitle.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/NearestCentersSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/NearestCentersSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Build the Vendor Promotion section as a full-width luxury background panel. Include the headline 'Own Premium Collection? Earn with Us.', two CTAs: 'Become Vendor' (gold gradient) and 'Learn More' (outlined), and three benefit highlights: Commission Benefits, Secure Inventory Management, and Transparent Payout. Use a deep dark or rich emerald background with gold text accents.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/VendorPromotionSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/VendorPromotionSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Build the Customer Testimonials section as an auto-playing carousel. Each slide shows: customer name, star rating, customer avatar image, testimonial text, and the rental product name they rented. Include at least 4 demo testimonials representing real bride reviews, trial experience feedback, and center experience. Add prev/next navigation controls.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/TestimonialsSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/TestimonialsSection.tsx"
+        ]
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Redesign the site footer with five link columns: About Us (with company description), Platform links (Jewellery, Bridal Sets, Party Wear, Designer Dresses), For Business (Become Vendor, Center Login, Partner With Us), Legal (Privacy Policy, Refund Policy, Vendor Policy, Terms & Conditions), and Contact Us (email, phone, address). Add a bottom bar with payment method icons, GST registration info, and company address. Include social media icon links.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/layout/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/layout/Footer.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Add conversion optimization UI elements to the home page: (1) A sticky Book Trial floating button fixed to the bottom of the viewport on mobile. (2) A WhatsApp floating action button fixed to the bottom-right corner. (3) A Recently Booked toast notification that auto-appears after 5 seconds showing a mock booking such as 'Priya just booked a trial for Bridal Lehenga'. (4) A countdown timer component within the hero section showing a limited-time offer countdown in hours, minutes, and seconds.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/home/StickyBookTrialButton.tsx",
+          "frontend/src/components/home/WhatsAppFAB.tsx",
+          "frontend/src/components/home/RecentlyBookedToast.tsx",
+          "frontend/src/components/home/CountdownTimer.tsx",
+          "frontend/src/components/home/HeroSection.tsx",
+          "frontend/src/pages/Home.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/home/StickyBookTrialButton.tsx",
+          "frontend/src/components/home/WhatsAppFAB.tsx",
+          "frontend/src/components/home/RecentlyBookedToast.tsx",
+          "frontend/src/components/home/CountdownTimer.tsx",
+          "frontend/src/components/home/HeroSection.tsx",
+          "frontend/src/pages/Home.tsx"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Ensure the entire home page is fully mobile-first responsive. Apply lazy loading to all product and category images. Add SEO meta tags to the HTML head: title, description, and Open Graph tags for social sharing. Add structured data as a JSON-LD script tag using the product listing schema for the platform.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/home/HeroSection.tsx",
+          "frontend/src/components/home/CategorySection.tsx",
+          "frontend/src/components/home/TrendingProductsSection.tsx",
+          "frontend/src/components/home/NearestCentersSection.tsx",
+          "frontend/src/components/home/TestimonialsSection.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/home/HeroSection.tsx",
+          "frontend/src/components/home/CategorySection.tsx",
+          "frontend/src/components/home/TrendingProductsSection.tsx",
+          "frontend/src/components/home/NearestCentersSection.tsx",
+          "frontend/src/components/home/TestimonialsSection.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/category-bridal-jewellery.dim_600x750.png",
+    "frontend/public/assets/generated/category-designer-gowns.dim_600x750.png",
+    "frontend/public/assets/generated/category-party-jewellery.dim_600x750.png",
+    "frontend/public/assets/generated/category-wedding-lehenga.dim_600x750.png",
+    "frontend/public/assets/generated/hero-banner.dim_1440x800.png",
+    "frontend/public/assets/generated/sanitization-badge.dim_400x400.png",
+    "frontend/src/components/home/CategorySection.tsx",
+    "frontend/src/components/home/CountdownTimer.tsx",
+    "frontend/src/components/home/HeroSection.tsx",
+    "frontend/src/components/home/HowItWorksSection.tsx",
+    "frontend/src/components/home/NearestCentersSection.tsx",
+    "frontend/src/components/home/RecentlyBookedToast.tsx",
+    "frontend/src/components/home/SearchBar.tsx",
+    "frontend/src/components/home/StickyBookTrialButton.tsx",
+    "frontend/src/components/home/TestimonialsSection.tsx",
+    "frontend/src/components/home/TrendingProductsSection.tsx",
+    "frontend/src/components/home/TrustStripSection.tsx",
+    "frontend/src/components/home/VendorPromotionSection.tsx",
+    "frontend/src/components/home/WhatsAppFAB.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/Home.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
